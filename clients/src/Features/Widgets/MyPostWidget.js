@@ -1,3 +1,4 @@
+import URL from '../../url'
 import {
   EditOutlined,
   DeleteOutlined,
@@ -47,7 +48,7 @@ const MyPostWidget = ({ picturepath, isPro = false, margin }) => {
       formData.append("picturepath", video.name);
     }
 
-    const response = await fetch(`posts`, {
+    const response = await fetch(`${URL}/posts`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,

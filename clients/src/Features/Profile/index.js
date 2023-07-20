@@ -1,5 +1,5 @@
 
-import URL from '../../url'
+import origin from '../../url'
 import { useMediaQuery } from "@mui/material";
 import PeopleIcon from "@mui/icons-material/People";
 import CloseIcon from "@mui/icons-material/Close";
@@ -84,7 +84,7 @@ const ProfilePage = (props) => {
 
   const getUser = async () => {
     const { data } = await axios.get(
-      `${URL}/users/${userid}`,
+      `${origin}/users/${userid}`,
       // `http://localhost:3001/users/${userid}`,
       {
         headers: {
@@ -99,7 +99,7 @@ const ProfilePage = (props) => {
     const makeFriend = async () => {
       try {
         const { data } = await axios.patch(
-          `${URL}/users/${user._id}/${User._id}/add`,
+          `${origin}/users/${user._id}/${User._id}/add`,
           // `http://localhost:3001/users/${user._id}/${User._id}/add`,
 
           {},
@@ -121,7 +121,7 @@ const ProfilePage = (props) => {
   const sendReqfriend = async () => {
     try {
       const { data } = await axios.patch(
-        `${URL}/users/${user._id}/${User._id}/request`,
+        `${origin}/users/${user._id}/${User._id}/request`,
         // `http://localhost:3001/users/${user._id}/${User._id}/request`,
         {},
         {
@@ -138,7 +138,7 @@ const ProfilePage = (props) => {
   const cancelFriend = async () => {
     try {
       const { data } = await axios.patch(
-        `${URL}/users/${user._id}/${User._id}/cancel`,
+        `${origin}/users/${user._id}/${User._id}/cancel`,
         // `http://localhost:3001/users/${user._id}/${User._id}/cancel`,
         {},
         {
@@ -157,7 +157,7 @@ const ProfilePage = (props) => {
   const cancelSentReq = async () => {
     try {
       const { data } = await axios.patch(
-        `${URL}/users/${user._id}/${User._id}/cancelSentReq`,
+        `${origin}/users/${user._id}/${User._id}/cancelSentReq`,
         // `http://localhost:3001/users/${user._id}/${User._id}/cancelSentReq`,
         {},
         {
@@ -175,7 +175,7 @@ const ProfilePage = (props) => {
   const unFriend = async () => {
     try {
       const { data } = await axios.patch(
-        `${URL}/users/${user._id}/${User._id}/unfriend`,
+        `${origin}/users/${user._id}/${User._id}/unfriend`,
         // `http://localhost:3001/users/${user._id}/${User._id}/unfriend`,
         {},
         {
@@ -283,7 +283,7 @@ const ProfilePage = (props) => {
 
   useEffect(() => {
     getUser();
-   console.log(55);
+
 
    
     // files.forEach((file) => URL.revokeObjectURL(file.preview));
@@ -303,7 +303,7 @@ const ProfilePage = (props) => {
     if (!friendStatus.alreadyFriend && friendid === user._id) {
      
       setfriendStatus({ touserRequest:false,isRequest:false, alreadyFriend: true });
-       console.log(friendStatus);
+  
     }
   });
 
