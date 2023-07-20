@@ -1,3 +1,4 @@
+import URL from 'url'
 import {
   ChatBubbleOutlineOutlined,
   FavoriteBorderOutlined,
@@ -41,7 +42,7 @@ const PostWidget = ({
   const ispicture = picturepath === undefined ? false : true;
   const patchLike = async () => {
     const { data } = await axios.patch(
-      `posts/${postid}/like`,
+      `${URL}/posts/${postid}/like`,
       // `http://localhost:3001/posts/${postid}/like`,
       { userid: loggedInUserId },
       {
@@ -61,7 +62,7 @@ const PostWidget = ({
 
     try {
       const { data } = await axios.patch(
-        `posts/${postid}/comment`,
+        `${URL}/posts/${postid}/comment`,
         // `http://localhost:3001/posts/${postid}/comment`,
         {
           comment: value.trim(),
@@ -166,7 +167,7 @@ const PostWidget = ({
           )}
         </div>
 
-        <div >
+        <div>
           <Friend
             name={name}
             userpicturepath={userpicturepath}
@@ -182,7 +183,7 @@ const PostWidget = ({
               height="auto"
               alt="Video"
               style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-              src={`assets/${picturepath}`}
+              src={`${URL}/assets/${picturepath}`}
               controls
             ></video>
           ) : (
@@ -192,7 +193,7 @@ const PostWidget = ({
                 height="100%"
                 alt="post"
                 style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-                src={`assets/${picturepath}`}
+                src={`${URL}/assets/${picturepath}`}
               />
             )
           )}

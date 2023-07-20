@@ -1,3 +1,4 @@
+import URL from '../../url'
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -83,7 +84,7 @@ const Form = () => {
       }
 
       const savedUserResponse = await axios.post(
-        "auth/register",
+        `${URL}/auth/register`,
         // "http://localhost:3001/auth/register",
         inputobj
       );
@@ -120,7 +121,7 @@ const Form = () => {
   const login = async (values, onSubmitProps) => {
     try {
       const loggedInResponse = await axios.post(
-        "auth/login",
+        `${URL}/auth/login`,
         // "http://localhost:3001/auth/login",
         values
       );

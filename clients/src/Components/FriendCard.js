@@ -1,3 +1,4 @@
+import URL from '../url'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import UserImage from "./UserImage";
@@ -18,7 +19,7 @@ const FriendCard = ({ image, name, isReqFriend, friendid }) => {
     try {
       const { data } = await axios.get(
         // `http://localhost:3001/users/${friendid}`,
-        `users/${friendid}`,
+        `${URL}/users/${friendid}`,
 
         {
           headers: {
@@ -34,7 +35,7 @@ const FriendCard = ({ image, name, isReqFriend, friendid }) => {
     try {
       const { data } = await axios.patch(
         // `http://localhost:3001/users/${user._id}/${friendid}/add`,
-        `users/${user._id}/${friendid}/add`,
+        `${URL}/users/${user._id}/${friendid}/add`,
         {},
         {
           headers: {
@@ -52,7 +53,7 @@ const FriendCard = ({ image, name, isReqFriend, friendid }) => {
   const cancelFriend = async () => {
     try {
       const { data } = await axios.patch(
-        `users/${user._id}/${friendid}/cancel`,
+        `${URL}/users/${user._id}/${friendid}/cancel`,
         // `http://localhost:3001/users/${user._id}/${friendid}/cancel`,
         {},
         {
@@ -69,7 +70,7 @@ const FriendCard = ({ image, name, isReqFriend, friendid }) => {
   const unFriend = async () => {
     try {
       const { data } = await axios.patch(
-        `users/${user._id}/${friendid}/unfriend`,
+        `${URL}/users/${user._id}/${friendid}/unfriend`,
         // `http://localhost:3001/users/${user._id}/${friendid}/unfriend`,
         {},
         {

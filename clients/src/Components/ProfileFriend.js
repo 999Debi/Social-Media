@@ -1,3 +1,4 @@
+import URL from '../url'
 import { useEffect, useState } from "react";
 import UserImage from "./UserImage";
 import { useSelector } from "react-redux";
@@ -12,7 +13,7 @@ const ProfileFriend = ({ friendid }) => {
   const getFriend = async () => {
     try {
       const { data } = await axios.get(
-        `users/${friendid}`,
+        `${URL}/users/${friendid}`,
         // `http://localhost:3001/users/${friendid}`,
 
         {

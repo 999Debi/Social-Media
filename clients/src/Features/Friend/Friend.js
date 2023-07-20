@@ -1,3 +1,4 @@
+import URL from '../../url'
 import { useMediaQuery } from "@mui/material";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import PeopleIcon from "@mui/icons-material/People";
@@ -34,7 +35,7 @@ const Friend = ({ friendid, name, userpicturepath }) => {
   const getReqFriend = async () => {
     try {
       const { data } = await axios.get(
-        `users/${_id}/allrequest`,
+        `${URL}/users/${_id}/allrequest`,
         // `http://localhost:3001/users/${_id}/allrequest`,
 
         {
@@ -51,7 +52,7 @@ const Friend = ({ friendid, name, userpicturepath }) => {
   const getalreadyFriend = async () => {
     try {
       const { data } = await axios.get(
-        `users/${_id}/alreadyfriends`,
+        `${URL}/users/${_id}/alreadyfriends`,
         // `http://localhost:3001/users/${_id}/alreadyfriends`,
 
         {
@@ -71,7 +72,7 @@ const Friend = ({ friendid, name, userpicturepath }) => {
   const makeFriend = async (friendid) => {
     try {
       const { data } = await axios.patch(
-        `users/${_id}/${friendid}/add`,
+        `${URL}/users/${_id}/${friendid}/add`,
         // `http://localhost:3001/users/${_id}/${friendid}/add`,
         {},
         {
@@ -91,7 +92,7 @@ const Friend = ({ friendid, name, userpicturepath }) => {
   const cancelFriend = async (friendid) => {
     try {
       const { data } = await axios.patch(
-        `users/${_id}/${friendid}/cancel`,
+        `${URL}/users/${_id}/${friendid}/cancel`,
         // `http://localhost:3001/users/${_id}/${friendid}/cancel`,
 
         {

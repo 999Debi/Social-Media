@@ -1,3 +1,4 @@
+import URL from '../../../url'
 import { useMediaQuery } from "@mui/material";
 import { useState } from "react";
 import { useSelector } from "react-redux";
@@ -39,7 +40,7 @@ const AboutForm = ({updatedpic} ) => {
    
 
     const res = await axios.post(
-      "user/updatepic",
+      `${URL}/user/updatepic`,
       // "http://localhost:3001/user/updatepic",
       formData,
       {
@@ -53,12 +54,11 @@ const AboutForm = ({updatedpic} ) => {
 
     
       const response = await axios.patch(
-        "auth/updateUser",
+        `${URL}/auth/updateUser`,
         // "http://localhost:3001/auth/updateUser",
         data,
         {
           headers: {
-          
             Authorization: `Bearer ${token}`,
           },
         }

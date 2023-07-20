@@ -1,3 +1,4 @@
+import URL from '../../url'
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts, setLoading } from "../../States/index";
@@ -13,7 +14,7 @@ const PostsWidget = ({ userid, isProfile = false }) => {
   const getPosts = async () => {
     const { data } = await axios.get(
   
-      `posts`,
+      `${URL}/posts`,
       // `http://localhost:3001/posts`,
 
       {
@@ -28,7 +29,7 @@ const PostsWidget = ({ userid, isProfile = false }) => {
 
   const getUserPosts = async () => {
     const { data } = await axios.get(
-      `posts/${userid}/post`,
+      `${URL}/posts/${userid}/post`,
       // `http://localhost:3001/posts/${userid}/post`,
 
       {
