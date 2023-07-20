@@ -13,7 +13,8 @@ const PostsWidget = ({ userid, isProfile = false }) => {
   const getPosts = async () => {
     const { data } = await axios.get(
   
-      `http://localhost:3001/posts`,
+      `posts`,
+      // `http://localhost:3001/posts`,
 
       {
         headers: {
@@ -27,8 +28,8 @@ const PostsWidget = ({ userid, isProfile = false }) => {
 
   const getUserPosts = async () => {
     const { data } = await axios.get(
-      // `/posts/${userid}/post`,
-      `http://localhost:3001/posts/${userid}/post`,
+      `posts/${userid}/post`,
+      // `http://localhost:3001/posts/${userid}/post`,
 
       {
         headers: {

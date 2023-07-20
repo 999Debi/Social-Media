@@ -82,7 +82,8 @@ const ProfilePage = (props) => {
 
   const getUser = async () => {
     const { data } = await axios.get(
-      `http://localhost:3001/users/${userid}`,
+      `users/${userid}`,
+      // `http://localhost:3001/users/${userid}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -95,7 +96,9 @@ const ProfilePage = (props) => {
     const makeFriend = async () => {
       try {
         const { data } = await axios.patch(
-          `http://localhost:3001/users/${user._id}/${User._id}/add`,
+          `users/${user._id}/${User._id}/add`,
+          // `http://localhost:3001/users/${user._id}/${User._id}/add`,
+      
           {},
           {
             headers: {
@@ -115,7 +118,8 @@ const ProfilePage = (props) => {
   const sendReqfriend = async () => {
     try {
       const { data } = await axios.patch(
-        `http://localhost:3001/users/${user._id}/${User._id}/request`,
+        `users/${user._id}/${User._id}/request`,
+        // `http://localhost:3001/users/${user._id}/${User._id}/request`,
         {},
         {
           headers: {
@@ -131,7 +135,8 @@ const ProfilePage = (props) => {
   const cancelFriend = async () => {
     try {
       const { data } = await axios.patch(
-        `http://localhost:3001/users/${user._id}/${User._id}/cancel`,
+        `users/${user._id}/${User._id}/cancel`,
+        // `http://localhost:3001/users/${user._id}/${User._id}/cancel`,
         {},
         {
           headers: {
@@ -149,7 +154,8 @@ const ProfilePage = (props) => {
   const cancelSentReq = async () => {
     try {
       const { data } = await axios.patch(
-        `http://localhost:3001/users/${user._id}/${User._id}/cancelSentReq`,
+        `users/${user._id}/${User._id}/cancelSentReq`,
+        // `http://localhost:3001/users/${user._id}/${User._id}/cancelSentReq`,
         {},
         {
           headers: {
@@ -166,7 +172,8 @@ const ProfilePage = (props) => {
   const unFriend = async () => {
     try {
       const { data } = await axios.patch(
-        `http://localhost:3001/users/${user._id}/${User._id}/unfriend`,
+        `users/${user._id}/${User._id}/unfriend`,
+        // `http://localhost:3001/users/${user._id}/${User._id}/unfriend`,
         {},
         {
           headers: {

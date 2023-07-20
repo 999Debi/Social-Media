@@ -12,8 +12,8 @@ const ProfileFriend = ({ friendid }) => {
   const getFriend = async () => {
     try {
       const { data } = await axios.get(
-        // `users/${friendid}`,
-        `http://localhost:3001/users/${friendid}`,
+        `users/${friendid}`,
+        // `http://localhost:3001/users/${friendid}`,
 
         {
           headers: {

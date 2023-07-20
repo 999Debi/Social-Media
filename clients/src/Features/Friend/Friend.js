@@ -34,8 +34,8 @@ const Friend = ({ friendid, name, userpicturepath }) => {
   const getReqFriend = async () => {
     try {
       const { data } = await axios.get(
-        // `users/${_id}/allrequest`,
-        `http://localhost:3001/users/${_id}/allrequest`,
+        `users/${_id}/allrequest`,
+        // `http://localhost:3001/users/${_id}/allrequest`,
 
         {
           headers: {
@@ -51,8 +51,8 @@ const Friend = ({ friendid, name, userpicturepath }) => {
   const getalreadyFriend = async () => {
     try {
       const { data } = await axios.get(
-        // `users/${_id}/alreadyfriends`,
-        `http://localhost:3001/users/${_id}/alreadyfriends`,
+        `users/${_id}/alreadyfriends`,
+        // `http://localhost:3001/users/${_id}/alreadyfriends`,
 
         {
           headers: {
@@ -71,8 +71,8 @@ const Friend = ({ friendid, name, userpicturepath }) => {
   const makeFriend = async (friendid) => {
     try {
       const { data } = await axios.patch(
-        // `users/${_id}/${friendid}/add`,
-        `http://localhost:3001/users/${_id}/${friendid}/add`,
+        `users/${_id}/${friendid}/add`,
+        // `http://localhost:3001/users/${_id}/${friendid}/add`,
         {},
         {
           headers: {
@@ -91,8 +91,8 @@ const Friend = ({ friendid, name, userpicturepath }) => {
   const cancelFriend = async (friendid) => {
     try {
       const { data } = await axios.patch(
-        // `users/${_id}/${friendid}/cancel`,
-        `http://localhost:3001/users/${_id}/${friendid}/cancel`,
+        `users/${_id}/${friendid}/cancel`,
+        // `http://localhost:3001/users/${_id}/${friendid}/cancel`,
 
         {
           headers: {

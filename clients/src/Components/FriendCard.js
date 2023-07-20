@@ -17,8 +17,8 @@ const FriendCard = ({ image, name, isReqFriend, friendid }) => {
   const getFriendinfo = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:3001/users/${friendid}`,
-        // `users/${friendid}`,
+        // `http://localhost:3001/users/${friendid}`,
+        `users/${friendid}`,
 
         {
           headers: {
@@ -33,8 +33,8 @@ const FriendCard = ({ image, name, isReqFriend, friendid }) => {
   const makeFriend = async () => {
     try {
       const { data } = await axios.patch(
-        `http://localhost:3001/users/${user._id}/${friendid}/add`,
-        // `users/${user._id}/${friendid}/add`,
+        // `http://localhost:3001/users/${user._id}/${friendid}/add`,
+        `users/${user._id}/${friendid}/add`,
         {},
         {
           headers: {
@@ -52,8 +52,8 @@ const FriendCard = ({ image, name, isReqFriend, friendid }) => {
   const cancelFriend = async () => {
     try {
       const { data } = await axios.patch(
-        // `users/${user._id}/${friendid}/cancel`,
-        `http://localhost:3001/users/${user._id}/${friendid}/cancel`,
+        `users/${user._id}/${friendid}/cancel`,
+        // `http://localhost:3001/users/${user._id}/${friendid}/cancel`,
         {},
         {
           headers: {
@@ -69,8 +69,8 @@ const FriendCard = ({ image, name, isReqFriend, friendid }) => {
   const unFriend = async () => {
     try {
       const { data } = await axios.patch(
-        // `users/${user._id}/${friendid}/unfriend`,
-        `http://localhost:3001/users/${user._id}/${friendid}/unfriend`,
+        `users/${user._id}/${friendid}/unfriend`,
+        // `http://localhost:3001/users/${user._id}/${friendid}/unfriend`,
         {},
         {
           headers: {

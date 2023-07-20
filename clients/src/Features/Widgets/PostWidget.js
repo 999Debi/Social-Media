@@ -41,8 +41,8 @@ const PostWidget = ({
   const ispicture = picturepath === undefined ? false : true;
   const patchLike = async () => {
     const { data } = await axios.patch(
-      // `posts/${postid}/like`,
-      `http://localhost:3001/posts/${postid}/like`,
+      `posts/${postid}/like`,
+      // `http://localhost:3001/posts/${postid}/like`,
       { userid: loggedInUserId },
       {
         headers: {
@@ -61,8 +61,8 @@ const PostWidget = ({
 
     try {
       const { data } = await axios.patch(
-        // `posts/${postid}/comment`,
-        `http://localhost:3001/posts/${postid}/comment`,
+        `posts/${postid}/comment`,
+        // `http://localhost:3001/posts/${postid}/comment`,
         {
           comment: value.trim(),
           userid: loggedInUserId,

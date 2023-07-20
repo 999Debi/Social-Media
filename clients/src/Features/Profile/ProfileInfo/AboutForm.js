@@ -39,8 +39,8 @@ const AboutForm = ({updatedpic} ) => {
    
 
     const res = await axios.post(
-      // "user/updatepic",
-      "http://localhost:3001/user/updatepic",
+      "user/updatepic",
+      // "http://localhost:3001/user/updatepic",
       formData,
       {
         headers: {
@@ -53,8 +53,8 @@ const AboutForm = ({updatedpic} ) => {
 
     
       const response = await axios.patch(
-        // "auth/updateUser",
-        "http://localhost:3001/auth/updateUser",
+        "auth/updateUser",
+        // "http://localhost:3001/auth/updateUser",
         data,
         {
           headers: {

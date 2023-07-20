@@ -8,8 +8,8 @@ const CommentUser = ({ image, size = "30px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`http://localhost:3001/assets/${image}`}
-        // src={`assets/${image}`}
+        // src={`http://localhost:3001/assets/${image}`}
+        src={`assets/${image}`}
       />
     </div>
   );

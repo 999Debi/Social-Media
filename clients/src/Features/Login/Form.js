@@ -83,8 +83,8 @@ const Form = () => {
       }
 
       const savedUserResponse = await axios.post(
-        // "auth/register",
-        "http://localhost:3001/auth/register",
+        "auth/register",
+        // "http://localhost:3001/auth/register",
         inputobj
       );
 
@@ -120,8 +120,8 @@ const Form = () => {
   const login = async (values, onSubmitProps) => {
     try {
       const loggedInResponse = await axios.post(
-        // "auth/login",
-        "http://localhost:3001/auth/login",
+        "auth/login",
+        // "http://localhost:3001/auth/login",
         values
       );
 
