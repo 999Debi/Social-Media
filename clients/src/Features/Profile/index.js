@@ -1,3 +1,5 @@
+
+import URL from '../../url'
 import { useMediaQuery } from "@mui/material";
 import PeopleIcon from "@mui/icons-material/People";
 import CloseIcon from "@mui/icons-material/Close";
@@ -82,7 +84,7 @@ const ProfilePage = (props) => {
 
   const getUser = async () => {
     const { data } = await axios.get(
-      `users/${userid}`,
+      `${URL}/users/${userid}`,
       // `http://localhost:3001/users/${userid}`,
       {
         headers: {
@@ -91,14 +93,15 @@ const ProfilePage = (props) => {
       }
     );
  setUser(data);
+
   };
 
     const makeFriend = async () => {
       try {
         const { data } = await axios.patch(
-          `users/${user._id}/${User._id}/add`,
+          `${URL}/users/${user._id}/${User._id}/add`,
           // `http://localhost:3001/users/${user._id}/${User._id}/add`,
-      
+
           {},
           {
             headers: {
@@ -118,7 +121,7 @@ const ProfilePage = (props) => {
   const sendReqfriend = async () => {
     try {
       const { data } = await axios.patch(
-        `users/${user._id}/${User._id}/request`,
+        `${URL}/users/${user._id}/${User._id}/request`,
         // `http://localhost:3001/users/${user._id}/${User._id}/request`,
         {},
         {
@@ -135,7 +138,7 @@ const ProfilePage = (props) => {
   const cancelFriend = async () => {
     try {
       const { data } = await axios.patch(
-        `users/${user._id}/${User._id}/cancel`,
+        `${URL}/users/${user._id}/${User._id}/cancel`,
         // `http://localhost:3001/users/${user._id}/${User._id}/cancel`,
         {},
         {
@@ -154,7 +157,7 @@ const ProfilePage = (props) => {
   const cancelSentReq = async () => {
     try {
       const { data } = await axios.patch(
-        `users/${user._id}/${User._id}/cancelSentReq`,
+        `${URL}/users/${user._id}/${User._id}/cancelSentReq`,
         // `http://localhost:3001/users/${user._id}/${User._id}/cancelSentReq`,
         {},
         {
@@ -172,7 +175,7 @@ const ProfilePage = (props) => {
   const unFriend = async () => {
     try {
       const { data } = await axios.patch(
-        `users/${user._id}/${User._id}/unfriend`,
+        `${URL}/users/${user._id}/${User._id}/unfriend`,
         // `http://localhost:3001/users/${user._id}/${User._id}/unfriend`,
         {},
         {
@@ -182,7 +185,7 @@ const ProfilePage = (props) => {
         }
       );
    dispatch(setFriends({ friends: data }));
-   console.log(data);
+
     } catch (error) {
    
     }
